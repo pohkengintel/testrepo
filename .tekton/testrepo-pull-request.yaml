@@ -21,6 +21,20 @@ metadata:
   name: testrepo-on-pull-request
   namespace: default-tenant
 spec:
+  podTemplate:
+    env:
+      - name: HTTP_PROXY
+        value: "http://proxy-png.intel.com:911"
+      - name: HTTPS_PROXY
+        value: "http://proxy-png.intel.com:912"
+      - name: NO_PROXY
+        value: "127.0.0.1,localhost,.local,.svc,.cluster.local,kubernetes.default.svc,registry-service.kind-registry,10.0.0.0/8,192.168.0.0/16,172.16.0.0/12"
+      - name: http_proxy
+        value: "http://proxy-png.intel.com:911"
+      - name: https_proxy
+        value: "http://proxy-png.intel.com:912"
+      - name: no_proxy
+        value: "127.0.0.1,localhost,.local,.svc,.cluster.local,kubernetes.default.svc,registry-service.kind-registry,10.0.0.0/8,192.168.0.0/16,172.16.0.0/12"
   params:
     - name: git-url
       value: '{{source_url}}'
