@@ -235,14 +235,8 @@ spec:
         runAfter:
           - prefetch-dependencies
         taskRef:
-          params:
-            - name: name
-              value: buildah-oci-ta-min
-            - name: bundle
-              value: quay.io/konflux-ci/tekton-catalog/task-buildah-oci-ta-min:0.10@sha256:564357fc6cfbd9f613c4467d32e46c919c070845eb434ca39b541a0b616f162d
-            - name: kind
-              value: task
-          resolver: bundles
+          name: build-container-local
+          kind: Task
       - name: build-image-index
         params:
           - name: IMAGE
