@@ -94,7 +94,7 @@ spec:
         description: Add built image into an OCI image index
         name: build-image-index
         type: string
-      - default: docker
+      - default: oci
         description: The format for the resulting image's mediaType. Valid values are oci or docker.
         name: buildah-format
         type: string
